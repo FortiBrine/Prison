@@ -4,6 +4,6 @@ import javax.inject.Inject
 import javax.inject.Singleton
 
 @Singleton
-class Commands @Inject constructor(
-    testCommand: TestCommand
+class CommandManager @Inject constructor(
+    private val testCommand: TestCommand
 )
