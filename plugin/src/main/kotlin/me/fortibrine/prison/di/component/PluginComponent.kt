@@ -3,11 +3,20 @@ package me.fortibrine.prison.di.component
 import dagger.BindsInstance
 import dagger.Component
 import me.fortibrine.prison.PrisonPlugin
+import me.fortibrine.prison.di.module.BindsModule
+import me.fortibrine.prison.di.module.MongoModule
+import me.fortibrine.prison.di.module.PluginModule
 import org.bukkit.plugin.java.JavaPlugin
 import javax.inject.Singleton
 
 @Singleton
-@Component(modules = [])
+@Component(
+    modules = [
+        PluginModule::class,
+        MongoModule::class,
+        BindsModule::class
+    ]
+)
 interface PluginComponent {
     fun inject(plugin: PrisonPlugin)
 

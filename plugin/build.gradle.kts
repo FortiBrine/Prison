@@ -19,5 +19,8 @@ dependencies {
 
     compileOnly(libs.spigot)
     implementation(project(":api"))
+
+    implementation(libs.mongodb)
+    implementation(libs.bson)
 }
 
