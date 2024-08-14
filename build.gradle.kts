@@ -41,3 +41,18 @@ subprojects {
         val libs = rootProject.libs
     }
 }
+
+tasks.create("deploy") {
+    dependsOn(
+        project.project("plugin").tasks.build
+    )
+
+    doLast {
+        val plugin = File("$rootDir/plugin/build/libs/plugin.jar")
+        plugin.copyTo(
+            File("/home/user/test/plugins/plugin.jar"),
+            overwrite = true,
+            bufferSize = 4 * 1024 * 1024
+        )
+    }
+}
