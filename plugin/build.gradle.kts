@@ -18,5 +18,6 @@ dependencies {
     ksp(libs.dagger)
 
     compileOnly(libs.spigot)
+    implementation(project(":api"))
 }
 

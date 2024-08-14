@@ -1,3 +1,6 @@
 
 rootProject.name = "Prison"
-include("plugin")
+include(
+    "plugin",
+    "api"
+)

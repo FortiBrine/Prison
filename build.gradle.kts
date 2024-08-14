@@ -39,6 +39,5 @@ subprojects {
 
     dependencies {
         val libs = rootProject.libs
-
     }
 }
