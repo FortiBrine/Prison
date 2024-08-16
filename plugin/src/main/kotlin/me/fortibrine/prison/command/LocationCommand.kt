@@ -9,6 +9,7 @@ import me.fortibrine.prison.api.data.world.LocationManager
 import me.fortibrine.prison.api.data.world.Position
 import me.fortibrine.prison.message.MessageConfig
 import me.fortibrine.prison.message.MessageType
+import me.fortibrine.prison.service.AutomaticRenew
 import org.bukkit.Bukkit
 import org.bukkit.Material
 import org.bukkit.command.Command
@@ -22,7 +23,8 @@ import javax.inject.Singleton
 class LocationCommand @Inject constructor (
     private val locationManager: LocationManager,
     private val messageConfig: MessageConfig,
-    private val plugin: JavaPlugin
+    private val plugin: JavaPlugin,
+    private val automaticRenew: AutomaticRenew
 ): AbstractCommand("location", "/location [x1] [y1] [z1] [x2] [y2] [z2] [lvl] [materials] [name]", "Data command") {
 
     private val scope = CoroutineScope(Dispatchers.IO + SupervisorJob())
@@ -76,13 +78,13 @@ class LocationCommand @Inject constructor (
             name
         )
 
-        sender.sendMessage(location.toString())
-
         scope.launch {
 
             locationManager.addLocation(
                 location
             )
+
+            automaticRenew.load()
 
             Bukkit.getScheduler().runTask(
                 plugin, Runnable {

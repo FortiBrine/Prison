@@ -6,3 +6,5 @@ command:
   not-player: "Ты не игрок"
   location:
     add-location: "Локация добавлена"
+mine:
+  update: "&0Обьявление: &fШахта обновлена"
