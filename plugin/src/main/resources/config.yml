@@ -3,3 +3,9 @@ database:
   database: "fortibrine"
   username: "fortibrine"
   password: "password"
+
+start:
+  world: "world"
+  x: 260
+  y: 67
+  z: 402
