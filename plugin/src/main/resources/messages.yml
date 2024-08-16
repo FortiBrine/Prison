@@ -1,3 +1,8 @@
 first-join:
   title: "Привет"
   subtitle: "Мы очень рады видеть вас на сервере"
+command:
+  not-op: "Вы не оператор"
+  not-player: "Ты не игрок"
+  location:
+    add-location: "Локация добавлена"
