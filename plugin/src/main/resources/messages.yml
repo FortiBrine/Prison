@@ -8,3 +8,4 @@ command:
     add-location: "Локация добавлена"
 mine:
   update: "&0Обьявление: &fШахта обновлена"
+  not-allow-to-break: "&0Ошибка: &fНельзя ломать этот блок"

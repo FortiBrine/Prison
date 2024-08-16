@@ -5,6 +5,7 @@ import me.fortibrine.prison.command.CommandManager
 import me.fortibrine.prison.di.component.DaggerPluginComponent
 import me.fortibrine.prison.listener.ListenerManager
 import me.fortibrine.prison.message.MessageConfig
+import me.fortibrine.prison.service.AllowBreakLocationBlocks
 import me.fortibrine.prison.service.AutomaticRenew
 import org.bukkit.Bukkit
 import org.bukkit.plugin.java.JavaPlugin
@@ -22,6 +23,7 @@ class PrisonPlugin: JavaPlugin() {
     @Inject lateinit var mongoClient: MongoClient
 
     @Inject lateinit var automaticRenew: AutomaticRenew
+    @Inject lateinit var allowBreakLocationBlocks: AllowBreakLocationBlocks
 
     override fun onEnable() {
         saveDefaultConfig()
@@ -31,6 +33,7 @@ class PrisonPlugin: JavaPlugin() {
             .inject(this)
 
         Bukkit.getScheduler().scheduleSyncRepeatingTask(this, automaticRenew, 20L * 10, 20L * 600)
+        allowBreakLocationBlocks.load()
     }
 
     override fun onDisable() {
