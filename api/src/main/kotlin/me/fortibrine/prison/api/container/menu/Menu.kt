@@ -69,6 +69,43 @@ open class Menu private constructor (
             return this
         }
 
+        fun button(
+            slot: Int,
+            title: String,
+            type: Material,
+            onClick: (Player) -> Unit
+        ): Builder {
+            items[slot] = Button(
+                item = ItemStack(type).apply {
+                    itemMeta?.setDisplayName(title)
+                    itemMeta = itemMeta
+                },
+                onClick = onClick
+            )
+            return this
+        }
+
+        fun button(
+            slot: Int,
+            button: Button
+        ): Builder {
+            items[slot] = button
+
+            return this
+        }
+
+        fun button(
+            slot: Int,
+            itemStack: ItemStack,
+            onClick: (Player) -> Unit
+        ): Builder {
+            items[slot] = Button(
+                item = itemStack,
+                onClick = onClick
+            )
+            return this
+        }
+
         fun build(): Menu {
             return Menu(
                 title = title,
