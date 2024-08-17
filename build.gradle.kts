@@ -1,6 +1,6 @@
 plugins {
     alias(libs.plugins.kotlin.jvm)
-    alias(libs.plugins.kotlin.kapt)
+//    alias(libs.plugins.kotlin.kapt)
     alias(libs.plugins.ksp)
     idea
 }
@@ -19,7 +19,7 @@ allprojects {
 subprojects {
     apply {
         plugin("org.jetbrains.kotlin.jvm")
-        plugin("org.jetbrains.kotlin.kapt")
+//        plugin("org.jetbrains.kotlin.kapt")
         plugin("com.google.devtools.ksp")
     }
 

@@ -3,6 +3,7 @@ package me.fortibrine.prison.di.component
 import dagger.BindsInstance
 import dagger.Component
 import me.fortibrine.prison.PrisonPlugin
+import me.fortibrine.prison.di.module.ApiModule
 import me.fortibrine.prison.di.module.BindsModule
 import me.fortibrine.prison.di.module.MongoModule
 import me.fortibrine.prison.di.module.PluginModule
@@ -14,7 +15,8 @@ import javax.inject.Singleton
     modules = [
         PluginModule::class,
         MongoModule::class,
-        BindsModule::class
+        BindsModule::class,
+        ApiModule::class
     ]
 )
 interface PluginComponent {

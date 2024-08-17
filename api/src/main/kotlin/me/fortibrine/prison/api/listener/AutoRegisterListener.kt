@@ -1,4 +1,4 @@
-package me.fortibrine.prison.listener
+package me.fortibrine.prison.api.listener
 
 import org.bukkit.Bukkit
 import org.bukkit.event.Listener

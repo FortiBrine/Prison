@@ -1,6 +1,6 @@
 package me.fortibrine.prison.settings
 
-import me.fortibrine.prison.listener.AutoRegisterListener
+import me.fortibrine.prison.api.listener.AutoRegisterListener
 import me.fortibrine.prison.message.MessageConfig
 import me.fortibrine.prison.message.MessageType
 import org.bukkit.event.EventHandler

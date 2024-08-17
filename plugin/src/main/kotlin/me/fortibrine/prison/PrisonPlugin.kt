@@ -1,6 +1,7 @@
 package me.fortibrine.prison
 
 import com.mongodb.kotlin.client.coroutine.MongoClient
+import me.fortibrine.prison.api.container.ContainerAPI
 import me.fortibrine.prison.command.CommandManager
 import me.fortibrine.prison.di.component.DaggerPluginComponent
 import me.fortibrine.prison.listener.ListenerManager
@@ -24,6 +25,8 @@ class PrisonPlugin: JavaPlugin() {
 
     @Inject lateinit var automaticRenew: AutomaticRenew
     @Inject lateinit var allowBreakLocationBlocks: AllowBreakLocationBlocks
+
+    @Inject lateinit var containerApi: ContainerAPI
 
     override fun onEnable() {
         saveDefaultConfig()

@@ -1,6 +1,8 @@
 package me.fortibrine.prison.command
 
 import me.fortibrine.prison.api.command.AbstractCommand
+import me.fortibrine.prison.api.container.menu.Menu
+import org.bukkit.Material
 import org.bukkit.command.Command
 import org.bukkit.command.CommandSender
 import org.bukkit.entity.Player
@@ -20,7 +22,22 @@ class TestCommand @Inject constructor(
             return false
         }
 
-        sender.sendMessage("HI player")
+        Menu
+            .newBuilder()
+            .title("Test menu")
+            .rows(3)
+            .button(10, Material.MINECART) {
+                it.sendMessage("you clicked minecart")
+            }
+            .button(13, Material.IRON_BLOCK) {
+                it.sendMessage("you clicked on iron block")
+            }
+            .button(15, Material.GOLD_BLOCK) {
+                it.sendMessage("you clicked on gold block")
+            }
+            .build()
+            .open(sender)
+
         return true
     }
 }
